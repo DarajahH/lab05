@@ -42,9 +42,15 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
     @Override
     public void push(T element) {
         // TODO: Increment operationCount
-
+    	operationCount++;
+    	
+    	if((top == elements.length - 1) == true) {
+    		
+    		elements[++top] = element;
+    		totalElements++;
+    		
+    	}
         // TODO: Check if the array is full (top == elements.length - 1)
-
         // TODO: Add the element to the top of the stack
 
         // TODO: Increment totalElements
@@ -58,17 +64,17 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
     @Override
     public T pop() {
         // TODO: Increment operationCount
-
+    	operationOCunt++;
         // TODO: Check if the stack is empty (isEmpty())
-
+    	elements.isEmpty();
         // TODO: Retrieve the top element
-
+    	T popElement = elements[top];
         // TODO: Clear the reference in the array to help garbage collection
-
+    	elements[top] = null;
         // TODO: Decrement totalElements
-
+    	totalElements--;
         // TODO: Return the popped element
-        return null; // Placeholder return, replace with actual implementation
+        return popElement; // Placeholder return, replace with actual implementation
     }
 
     /**
@@ -79,11 +85,12 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
     @Override
     public T peek() {
         // TODO: Increment operationCount
-
+    	operationCount++;
         // TODO: Check if the stack is empty (isEmpty())
-
+    	elements.isEmpty();
         // TODO: Return the top element without removing it
-        return null; // Placeholder return, replace with actual implementation
+    	T topElement = element[top];
+        return topElement;; // Placeholder return, replace with actual implementation
     }
 
     /**
@@ -93,8 +100,12 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
     @Override
     public boolean isEmpty() {
         // TODO: Increment operationCount
-
+    	operationCount++;
         // TODO: Return true if the stack is empty (top == -1)
+    	if ((top == -1) == true) {
+    		
+    		return true;
+    	}
         return false; // Placeholder return, replace with actual implementation
     }
 
@@ -105,9 +116,10 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
     @Override
     public int size() {
         // TODO: Increment operationCount
-
+    	operationCount++;
+    	
         // TODO: Return the number of elements in the stack (top + 1)
-        return 0; // Placeholder return, replace with actual implementation
+        return (top+1); // Placeholder return, replace with actual implementation
     }
 
     /**
@@ -115,7 +127,7 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
      */
     private void resize() {
         // TODO: Calculate the new capacity using GROWTH_FACTOR
-
+    	int newCapacity = (T[]) Object(GROWTH_FACTOR);
         // TODO: Create a new array with the new capacity
 
         // TODO: Copy elements from the old array to the new array
