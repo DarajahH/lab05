@@ -23,14 +23,16 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
     /**
      * Creates a new ArrayStack with default capacity.
      */
+    
     public ArrayStack() {
         // TODO: Initialize the elements array with the DEFAULT_CAPACITY
-
+    elements = (T[]) new Object[DEFAULT_CAPACITY];
         // TODO: Set top to -1 (indicating an empty stack)
-
+    	top = -1;
         // TODO: Initialize operationCount to 0
-
+    	operationCount = 0;
         // TODO: Assign a unique stackId by incrementing totalStacks
+    	stackId = totalStacks++;
     }
 
     /**
