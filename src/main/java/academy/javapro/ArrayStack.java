@@ -109,10 +109,8 @@ public class ArrayStack<T extends Number> implements CustomStack<T> {
      */
     @Override
     public int size() {
-        // TODO: Increment operationCount
+       
     	operationCount++;
-    	
-        // TODO: Return the number of elements in the stack (top + 1)
         return (top+1); // Placeholder return, replace with actual implementation
     }
 
